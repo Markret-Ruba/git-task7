@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Doller=new XMLHttpRequest();
+        Doller.open("GET","https://restcountries.com/v3.1/all",true)
+        Doller.onload=function(){
+            let response=JSON.parse(Doller.responseText);
+            //console.log(response) 
+            let currency=response.filter(element=>{return element.currencies=`Dollar`;
+            })
+        console.log(currency);
+        }
+Doller.send();
+    </script>
+</body>
+</html>

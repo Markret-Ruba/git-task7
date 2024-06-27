@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Country=new XMLHttpRequest();
+        Country.open("GET","https://restcountries.com/v3.1/all",true)
+        Country.onload=function(){
+            let response=JSON.parse(Country.responseText);
+              console.log(response) 
+            let Details=[response.name, response.capital,response.flag] 
+            let Display=Details.forEach(response => {console.log(response);
+                return response;
+                
+            });  
+            console.log(Display); 
+        }
+           
+    
+        Country.send()
+
+    </script>
+</body>
+</html>
+
+

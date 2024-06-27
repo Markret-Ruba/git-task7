@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let countries=new XMLHttpRequest();
+        countries.open("GET","https://restcountries.com/v3.1/all",true)
+        countries.onload=function(){
+           let response=JSON.parse(countries.responseText);
+                console.log(response) 
+            let asianCountries=response.filter (country=>{
+    return country.continent='Asia';
+})
+console.log(asianCountries);
+  
+        }
+        countries.send()
+           </script>
+</body>
+</html>

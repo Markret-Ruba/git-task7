@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let Population=new XMLHttpRequest();
+Population.open("GET","https://restcountries.com/v3.1/all",true)
+Population.onload=function(){
+    let response=JSON.parse(Population.responseText);
+            //    console.log(response) 
+            let Cpop=response.filter(country=>{return country.population<200000;})
+            console.log(Cpop);
+        }
+        Population.send()
+
+    </script>
+</body>
+</html>
